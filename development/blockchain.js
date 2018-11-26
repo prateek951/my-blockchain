@@ -2,29 +2,32 @@
 
 function Blockchain() {
   this.chain = [];
-  this.transactions = [];
+  this.latestTransactions = [];
 }
 
 /**
  * Utility method to add a new block to the Blockchain
  * */
 
-Blockchain.prototype.addBlock = (nonce, previousBlockHash, hash) => {
+Blockchain.prototype.addBlock = function(nonce, previousBlockHash, hash) {
   /** Create a block */
 
   const newBlock = {
     index: this.chain.length + 1,
     timestamp: Date.now(),
-    transactions: this.transactions,
+    transactions: this.latestTransactions,
     nonce,
-    hash,
-    previousBlockHash
+    previousBlockHash,
+    hash
   };
   /** Clear out the transactions since waiting transactions are now taken care of by new block*/
 
-  this.transactions = [];
-  
+  this.latestTransactions = [];
+
   /** Push the new block to the blockchain*/
   this.chain.push(newBlock);
   return newBlock;
 };
+
+/** Export the blockchain for testing and other purposes */
+module.exports = Blockchain;
