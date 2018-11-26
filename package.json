@@ -1,0 +1,25 @@
+{
+  "name": "my-blockchain",
+  "version": "1.0.0",
+  "description": "my first blockchain in javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateek951/my-blockchain.git"
+  },
+  "keywords": [
+    "blockchain",
+    "javascript",
+    "nodejs",
+    "express"
+  ],
+  "author": "Prateek Madaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prateek951/my-blockchain/issues"
+  },
+  "homepage": "https://github.com/prateek951/my-blockchain#readme"
+}
