@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/prateek951/my-blockchain#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "sha256": "^0.2.0"
   }
 }
