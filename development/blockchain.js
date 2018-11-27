@@ -106,7 +106,9 @@ Blockchain.prototype.PROOF_OF_WORK = function(previousBlockHash,currentBlockData
       nonce++;
       /** Again run the hashBlock method till the criteria is met*/
       hash = this.hashBlock(previousBlockHash,currentBlockData,nonce); 
-  }
+      /** Constant monitor this log whether we got the hash with 4 0s at the start */ 
+      console.log(hash); 
+    }
   /** Return the nonce */
   return nonce;
 }

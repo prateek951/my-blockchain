@@ -66,7 +66,14 @@ const nonce = 100;
 
 /** Hash a block*/
 
-const RESULTING_HASH = bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce);
+const RESULTING_HASH = bitcoin.hashBlock(
+  previousBlockHash,
+  currentBlockData,
+  nonce
+);
 console.log(RESULTING_HASH);
+
+/** Perform POW*/
+console.log(`Nonce : ${bitcoin.PROOF_OF_WORK(previousBlockHash,currentBlockData)}`);
 
 console.log(bitcoin);
