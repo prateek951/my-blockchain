@@ -29,5 +29,13 @@ Blockchain.prototype.addBlock = function(nonce, previousBlockHash, hash) {
   return newBlock;
 };
 
+/**
+ * Utility method to get the last block of the blockchain
+ * */
+
+Blockchain.prototype.getLastBlock = function() {
+  return this.chain[this.chain.length - 1];
+};
+
 /** Export the blockchain for testing and other purposes */
 module.exports = Blockchain;
