@@ -1,12 +1,17 @@
 /** Created by Prateek Madaan on 26 November 2018 */
 
+/** Constructor function for the Blockchain */
+
 function Blockchain() {
   this.chain = [];
   this.latestTransactions = [];
 }
 
 /**
- * Utility method to add a new block to the Blockchain
+ * @desc Utility method to add a new block to the Blockchain
+ * @param nonce
+ * @param previousBlockHash The hash of the previous block
+ * @param hash The hash of the current block
  * */
 
 Blockchain.prototype.addBlock = function(nonce, previousBlockHash, hash) {
@@ -30,12 +35,20 @@ Blockchain.prototype.addBlock = function(nonce, previousBlockHash, hash) {
 };
 
 /**
- * Utility method to get the last block of the blockchain
+ * @desc Utility method to get the last block of the blockchain
+ *
  * */
 
 Blockchain.prototype.getLastBlock = function() {
   return this.chain[this.chain.length - 1];
 };
+
+/**
+ * @desc Utility method to create a new transaction
+ * @param amount to be transferred from the sender to the receiver
+ * */
+
+Blockchain.prototype.createNewTransaction = function(amount) {};
 
 /** Export the blockchain for testing and other purposes */
 module.exports = Blockchain;
