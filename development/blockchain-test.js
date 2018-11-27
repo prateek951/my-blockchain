@@ -44,4 +44,29 @@ bitcoin.createNewTransaction(
 
 bitcoin.addBlock(100, "WUW4EFS32323QFCKHFE", "32UQWMDEYUGE32yzcxjzz");
 
+const previousBlockHash = `0adscgw3rfgvnafsvdbwjewgred`;
+const currentBlockData = [
+  {
+    amount: 10,
+    sender: "waofuisafawbhjrqrof",
+    receiver: "x32iefwhjr3wdqewvt3"
+  },
+  {
+    amount: 50,
+    sender: "qdsafdvbsjjdvcxnxjhs",
+    receiver: "asfzgdbssahjdsebads"
+  },
+  {
+    amount: 200,
+    sender: "trejthkadfsnjksffsdfs",
+    receiver: "dfbgdkjsjldfdbvjfkdl"
+  }
+];
+const nonce = 100;
+
+/** Hash a block*/
+
+const RESULTING_HASH = bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce);
+console.log(RESULTING_HASH);
+
 console.log(bitcoin);
