@@ -4,7 +4,8 @@
   "description": "my first blockchain in javascript",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./development/API.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
   }
 }

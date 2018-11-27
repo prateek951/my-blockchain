@@ -5,3 +5,7 @@ exports.retrieveBlockchain = (req, res, next) => {
 exports.createTransaction = (req, res, next) => {
 
 }
+
+exports.mineBlock = (req, res, next) => {
+    console.log('hooked up...');
+}

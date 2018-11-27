@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const blockchainController = require('./controllers/chain');
 
-
 /**
  * @route GET /blockchain
  * @desc Retrieve the blockchain
