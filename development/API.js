@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const blockchainController = require('./controllers/chain');
+const blockchainController = require("./controllers/chain");
 
-
+/** Parsing incoming request body */
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 /**
  * @route GET /blockchain
@@ -11,7 +12,7 @@ app.use(express.json());
  * @access Public
  */
 
-app.get('/blockchain',blockchainController.retrieveBlockchain);
+app.get("/blockchain", blockchainController.retrieveBlockchain);
 
 /**
  * @route POST /transaction
@@ -19,14 +20,14 @@ app.get('/blockchain',blockchainController.retrieveBlockchain);
  * @access Public
  */
 
- app.post('/transaction',blockchainController.createTransaction);
+app.post("/transaction", blockchainController.createTransaction);
 
- /**
+/**
  * @route GET /mine
  * @desc Mine a new block (Create a new block)
  * @access Public
  */
-app.get('/mine',blockchainController.mineBlock);
+app.get("/mine", blockchainController.mineBlock);
 
 const { PORT } = process.env;
 const port = PORT || 3000;

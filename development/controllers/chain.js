@@ -1,7 +1,11 @@
+const Blockchain = require('../blockchain');
 const { OK } = require("http-status-codes");
+
+const bitcoin = new Blockchain();
 
 exports.retrieveBlockchain = (req, res, next) => {
   console.log("hooked up...");
+  res.status(OK).send(bitcoin);
 };
 
 exports.createTransaction = (req, res, next) => {
