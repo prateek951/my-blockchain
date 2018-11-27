@@ -1,6 +1,9 @@
-/** Created by Prateek Madaan on 26 November 2018 */
+/** Created by Prateek Madaan on 27 November 2018 */
 
 /** Constructor function for the Blockchain */
+
+/** Import the necessary third party packages */
+const SHA256 = require("sha256");
 
 function Blockchain() {
   this.chain = [];
@@ -16,7 +19,6 @@ function Blockchain() {
 
 Blockchain.prototype.addBlock = function(nonce, previousBlockHash, hash) {
   /** Create a block */
-
   const newBlock = {
     index: this.chain.length + 1,
     timestamp: Date.now(),
@@ -51,16 +53,31 @@ Blockchain.prototype.getLastBlock = function() {
  * */
 
 Blockchain.prototype.createNewTransaction = function(amount, sender, receiver) {
-  /** Create a new transaction */ 
+  /** Create a new transaction */
+
   const newTransaction = {
     amount,
     sender,
     receiver
   };
-  /** Append the new transaction to the pendingTransactions */ 
+  /** Append the new transaction to the pendingTransactions */
+
   this.pendingTransactions.push(newTransaction);
   /** Return the number of the block to which this transaction will get added to*/
-  return this.getLastBlock()['index'] + 1;
+  return this.getLastBlock()["index"] + 1;
+};
+
+/**
+ * @desc Utility method to hash a block
+ * @param previousBlockHash previousBlockHash for the current block
+ * @param currentBlockData  The data of the current block which is to be hashed
+ * @param nonce nonce
+ */
+
+Blockchain.prototype.hashBlock = function(previousBlockHash,currentBlockData,nonce)  {
+  const blockString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
+  const hash = SHA256(blockString,{ asString : true});
+  return hash;
 };
 
 /** Export the blockchain for testing and other purposes */

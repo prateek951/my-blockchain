@@ -1,4 +1,4 @@
-/** Created by Prateek Madaan on 26 November 2018 */
+/** Created by Prateek Madaan on 27 November 2018 */
 
 const Blockchain = require("./blockchain");
 
@@ -44,4 +44,4 @@ bitcoin.createNewTransaction(
 
 bitcoin.addBlock(100, "WUW4EFS32323QFCKHFE", "32UQWMDEYUGE32yzcxjzz");
 
-console.log(bitcoin.chain[2]);
+console.log(bitcoin);
