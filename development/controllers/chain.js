@@ -1,6 +1,7 @@
+/** Created by Prateek Madaan on 27 November 2018*/ 
+
 const Blockchain = require('../blockchain');
 const { OK } = require("http-status-codes");
-
 const bitcoin = new Blockchain();
 
 exports.retrieveBlockchain = (req, res, next) => {
