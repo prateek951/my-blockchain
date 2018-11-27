@@ -1,13 +1,15 @@
 /** Created by Prateek Madaan on 27 November 2018 */
 
-/** Constructor function for the Blockchain */
 
 /** Import the necessary third party packages */
 const SHA256 = require("sha256");
 
+/** Constructor function for the Blockchain */
 function Blockchain() {
   this.chain = [];
   this.pendingTransactions = [];
+  /** Create the genesis block - pass in arbitrary params */
+  this.addBlock(100,'0','0');
 }
 
 /**
