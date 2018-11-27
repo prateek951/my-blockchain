@@ -44,22 +44,22 @@ bitcoin.createNewTransaction(
 
 bitcoin.addBlock(100, "WUW4EFS32323QFCKHFE", "32UQWMDEYUGE32yzcxjzz");
 
-const previousBlockHash = `0adscgw3rfgvnafsvdbwjewgred`;
+const previousBlockHash = `01NADTEDSERWADSGRQW`;
 const currentBlockData = [
   {
     amount: 10,
-    sender: "waofuisafawbhjrqrof",
-    receiver: "x32iefwhjr3wdqewvt3"
+    sender: "01NADTEDSERWADSGRQW",
+    receiver: "01N3242RWADSGRQW"
   },
   {
     amount: 50,
-    sender: "qdsafdvbsjjdvcxnxjhs",
-    receiver: "asfzgdbssahjdsebads"
+    sender: "01NADT3232EDWGRQW",
+    receiver: "01NWERFRW442WADSGRQW"
   },
   {
     amount: 200,
-    sender: "trejthkadfsnjksffsdfs",
-    receiver: "dfbgdkjsjldfdbvjfkdl"
+    sender: "01NADASCSEDWFSGRQW",
+    receiver: "01NADDSFSFW432DSGRQW"
   }
 ];
 const nonce = 100;
@@ -74,6 +74,12 @@ const RESULTING_HASH = bitcoin.hashBlock(
 console.log(RESULTING_HASH);
 
 /** Perform POW*/
-console.log(`Nonce : ${bitcoin.PROOF_OF_WORK(previousBlockHash,currentBlockData)}`);
+console.log(
+  `Nonce : ${bitcoin.PROOF_OF_WORK(previousBlockHash, currentBlockData)}`
+);
+
+/** Again hash the block but pass the nonce value for which we got the 
+ * a hash that began with 4 0s */ 
+// bitcoin.hashBlock(previousBlockHash,currentBlockData,nonceForHashWith40s)
 
 console.log(bitcoin);
