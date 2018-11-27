@@ -1,3 +1,7 @@
-exports.getHelloWorld = (req, res, next) => {
-    res.send('hello world');
+exports.retrieveBlockchain = (req, res, next) => {
+    console.log('hooked up...');
+}
+
+exports.createTransaction = (req, res, next) => {
+
 }
