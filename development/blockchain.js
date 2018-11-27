@@ -80,5 +80,37 @@ Blockchain.prototype.hashBlock = function(previousBlockHash,currentBlockData,non
   return hash;
 };
 
+/**
+ * @desc Utility method to perform PROOF OF WORK (Computation Intensive)
+ * @param previousBlockHash previousBlockHash for the current block
+ * @param currentBlockData  The data of the current block which is to be hashed
+*/
+
+Blockchain.prototype.PROOF_OF_WORK = function(previousBlockHash,currentBlockData) {
+  
+  /** POW*/ 
+  
+  /** Repeatedly hash the block until it finds the correct hash starting with say 0000*/
+  /** Use the currentBlockData for the hash,but also the previousBlockHash */
+  /** Continuously change nonce value until it finds the correct hash*/
+  /** Return the nonce value that creates the correct hash */
+  
+  /** Define the nonce*/ 
+  let nonce = 0;
+  /** Hash for the first time */
+  let hash = this.hashBlock(previousBlockHash,currentBlockData,nonce);
+  
+  /** Repeatedly hash the block until it finds the correct hash starting with say 0000*/
+  while( hash.substring(0,4) !== '0000') {
+      /** Increment the nonce */ 
+      nonce++;
+      /** Again run the hashBlock method till the criteria is met*/
+      hash = this.hashBlock(previousBlockHash,currentBlockData,nonce); 
+  }
+  /** Return the nonce */
+  return nonce;
+}
+
+
 /** Export the blockchain for testing and other purposes */
 module.exports = Blockchain;
